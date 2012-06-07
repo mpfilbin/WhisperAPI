@@ -308,27 +308,13 @@
     <None Include="client\app\views\templates\navigation.hbs" />
     <None Include="client\app\views\templates\sidebar.hbs" />
     <None Include="client\app\views\view.coffee" />
-    <Content Include="client\config.coffee">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="client\package.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="client\test\controllers\signins_controller_test.coffee">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="client\test\models\navigation_test.coffee">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="client\test\models\user_test.coffee">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="client\test\views\home_view_test.coffee">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="client\test\views\navigation_view_test.coffee">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="client\config.coffee" />
+    <Content Include="client\package.json" />
+    <Content Include="client\test\controllers\signins_controller_test.coffee" />
+    <Content Include="client\test\models\navigation_test.coffee" />
+    <Content Include="client\test\models\user_test.coffee" />
+    <Content Include="client\test\views\home_view_test.coffee" />
+    <Content Include="client\test\views\navigation_view_test.coffee" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
