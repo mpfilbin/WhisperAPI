@@ -151,7 +151,8 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudentUtilities.cs" />
+    <Compile Include="Utilities\PearsonApiUtilities.cs" />
+    <Compile Include="Utilities\StudentUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
