@@ -6,4 +6,3 @@ Whisper.Checkin = Backbone.Model.extend({
   }
 
 });
-
