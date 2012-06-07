@@ -23,6 +23,12 @@ namespace Whisper.API
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+           routes.MapHttpRoute(
+                name: "CheckinApi",
+                routeTemplate: "api/location/checkin/{studentId}/{courseid}/{lat}/{lon}",
+                defaults: new { controller = "Location", action = "Checkin", studentId = UrlParameter.Optional, courseid = UrlParameter.Optional, lat = UrlParameter.Optional, lon = UrlParameter.Optional }
+            );
+
             routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

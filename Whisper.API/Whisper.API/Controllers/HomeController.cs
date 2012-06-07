@@ -28,5 +28,11 @@ namespace Whisper.API.Controllers
 
             return View();
         }
+        public ActionResult Test()
+        {
+            ViewBag.Message = "Api test page.";
+
+            return View();
+        }
     }
 }
