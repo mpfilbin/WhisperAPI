@@ -11,3 +11,5 @@ Whisper.API/client/public
 
 TestResults
 /Whisper.API/_ReSharper.Whisper.API
+
+/Whisper.API/Whisper.API/client/js/.idea
