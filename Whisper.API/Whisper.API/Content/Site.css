@@ -319,13 +319,12 @@ aside {
 
 /* forms */
 fieldset {
-    border: none;
-    margin: 0;
-    padding: 0;
+    margin: 5;
+    padding: 5;
 }
 
     fieldset legend {
-        display: none;
+        
     }
     
     fieldset ol {
