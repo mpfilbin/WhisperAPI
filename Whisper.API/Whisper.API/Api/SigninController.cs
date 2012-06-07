@@ -3,37 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
+using Whisper.API.Models;
 
 namespace Whisper.API.Controllers
 {
     public class SigninController : ApiController
     {
-        // GET /api/signin
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET /api/signin/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST /api/signin
-        public string Post(string username, string password)
+        public StudentPoco Post(string username, string password)
         {
-            return "123";
+            var result = StudentUtilities.GetStudentPoco("User0001");
+
+            result.UserName = username; //for testing purposes only...
+
+            return result;
         }
 
-        // PUT /api/signin/5
-        public void Put(int id, string value)
-        {
-        }
-
-        // DELETE /api/signin/5
-        public void Delete(int id)
-        {
-        }
     }
 }
