@@ -4,3 +4,8 @@ obj
 
 # mstest test results
 TestResults
+
+Whisper.API/client/node_modules
+Whisper.API/client/public
+
+
