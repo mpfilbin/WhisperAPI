@@ -166,6 +166,8 @@
     <Content Include="client\crossdomain.xml" />
     <Content Include="client\css\custom.css" />
     <Content Include="client\css\style.css" />
+    <Content Include="client\img\glare.png" />
+    <Content Include="client\img\iphone.png" />
     <Content Include="client\index.html" />
     <Content Include="client\js\app.js" />
     <Content Include="client\js\libs\jquery-1.7.1.js" />
