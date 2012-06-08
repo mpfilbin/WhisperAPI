@@ -4,7 +4,7 @@ Whisper.MainView = Backbone.View.extend({
         'click #checkin-link a': 'checkin',
         'click #show-list-link a' : 'showList',
         'click #show-map-link a' : 'showMap',
-        'mouseup #course-picker select': 'onSelectChange',
+        'change #course-picker select': 'onSelectChange',
         'click button#check-in': "checkin"
     },
     initialize: function() {
@@ -68,6 +68,20 @@ Whisper.MainView = Backbone.View.extend({
             }
         });
     },
+    loadInitialData: function(){
+        var self = this;
+        selectedCouseId = this.getSelectedCourseId()
+        checkinsCollection = new Whisper.CheckinsCollection();
+        checkinsCollection.setUrl(selectedCouseId);
+        checkinsCollection.fetch({
+            success:function(results, response){
+                self.showMap(results.toJSON());
+            },
+            error: function(results, response){
+                console.log(response);
+            }
+        });
+    },
     showMap: function(checkins) {
         this.$el.find('#show-map-link').hide();
         this.$el.find('#show-list-link').show();
@@ -80,11 +94,12 @@ Whisper.MainView = Backbone.View.extend({
         }
         this.mapView.render();
         this.mapView.clear();
-        this.mapView.$el.show();
-        this.selectedSubView = 'map';
-        if(typeof checkins !== 'undefined'){
+        if(checkins && checkins.length > 0){
             this.mapView.map.placeMarker(checkins);
         }
+        this.mapView.$el.show();
+        this.selectedSubView = 'map';
+
     },
     showList: function(checkins) {
         this.$el.find('#show-list-link').hide();

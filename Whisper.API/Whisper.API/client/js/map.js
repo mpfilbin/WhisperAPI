@@ -52,9 +52,9 @@ Whisper.Map = (function () {
         }
         $.each(markerInfo, function (index, element) {
             var marker = new google.maps.Marker({
-                position:new google.maps.LatLng(element.lat, element.lng),
+                position:new google.maps.LatLng(element.Latitude, element.Longitude),
                 map:map,
-                title:'test'
+                title: element.StudentId
             });
             if (!neverClear) markers.push(marker);
         });
