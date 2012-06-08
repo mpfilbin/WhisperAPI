@@ -1,6 +1,6 @@
 html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
-#map-canvas { height: 500px; width: 500px; }
+#map-canvas, #recent-checkins { height: 500px; width: 500px; }
 
 
 /*
