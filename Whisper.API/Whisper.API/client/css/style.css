@@ -249,8 +249,47 @@ td { vertical-align: top; }
   background-image:url(../img/whisperlogobig.png);
   background-repeat:no-repeat;
   height:112px;
-  margin-top:45px;
+  margin-top:90px;
+  margin-bottom:20px;
   width:324px;
+}
+
+input[type="text"], input[type="password"] {
+  -webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+margin-bottom:10px;
+margin-top:10px;
+}
+
+input[type="submit"],input[type="button"]{
+  margin-top:10px;
+  font-size:1.6em;
+}
+
+input[type="button"]{
+  background-color:#ffb400;
+    -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border:1px solid gray;
+
+}
+
+label{
+ display:none;
+}
+
+#loginform{
+  text-align:right;
+  margin-right:26px;
+  position:absolute;
+  margin-left:116px;
+}
+
+a:link,a:visited,a:focus,a:hover,a:active {
+  color:#ffb400;
+  text-decoration:none;
 }
 
 

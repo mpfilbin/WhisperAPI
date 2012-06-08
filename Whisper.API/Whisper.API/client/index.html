@@ -33,19 +33,22 @@
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
   <script type="text/template" id="signin-template">
+      <div class="whisperlogobig"></div>
       <div id="login-form">
-      <h2>Please Login</h2>
       <div id="login-error-message" class="hidden">
         <p>
           Sorry, there was a problem logging you in. Please check either your username or password and
           try again.
         </p>
       </div>
-      <form action="<%= signin_uri %>" >
+      <form id="loginform" action="<%= signin_uri %>">
         <label for="username">Username:</label>
-        <input type="text" name="username" /><br />
+        <input type="text" name="username" value="username"/><br />
+        <a href="#">I forgot my username</a><br />
         <label for="password">Password:</label>
-        <input type="password" name="password" /><br />
+        <input type="password" name="password"/><br />
+        <a href="#">I forgot my password</a><br />
+        <input type="button" name="signup" value="Sign up!" />
         <input type="submit" name="submit" value="Login" />
       </form>
     </div>
@@ -118,8 +121,6 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
   </header>
      <div class="maininterface">
      <div class="glare"></div>
-
-      <div class="whisperlogobig"></div>
       <div id="main-content" role="main" style="border:ipx solid red;"></div>
       
     </div>
