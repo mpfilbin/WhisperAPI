@@ -1,4 +1,4 @@
-Whisper.User = Backbone.Model.extend({
+Whisper.Student = Backbone.Model.extend({
 
   urlRoot: '/students',
 

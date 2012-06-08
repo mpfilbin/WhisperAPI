@@ -55,11 +55,10 @@ Whisper.SigninView = Backbone.View.extend({
     }
   },
   validateFormInput: function(){
-    var form = $("#login-form form");
-    var formData = form.serializeArray();
-    var i;
-    var valid = true;
-    var inputField, field_name, query;
+    var form, formData, i, inputField, fieldName, query, valid;
+    form = $("#login-form form");
+    formData = form.serializeArray();
+    valid = true;
     for(i = 0; i < formData.length; i++){
       field_name = formData[i].name;
       query = "input[name="+field_name+"]";
@@ -81,10 +80,8 @@ Whisper.SigninView = Backbone.View.extend({
     if(results){
       Whisper.app.currentUser.accessToken = results.EncodedAuthToken;
       Whisper.app.currentUser.id = results.UserId;
+      Whisper.app.currentUser.student = new Whisper.Student(result.User);
       this.remove();
-      var mainView = new Whisper.MainView;
-      mainView.render();
-      this.trigger("loginSuccess", "");
     }
   },
   signinFailure: function(failure){

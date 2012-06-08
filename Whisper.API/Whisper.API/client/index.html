@@ -139,6 +139,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyApXY_LzzT8ze9rMkobNKntNvM_oXSIP4o&sensor=true"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/views/signinView.js"></script>
+<script type="text/javascript" src="js/models/student.js"></script>
 <script src="js/views/mainView.js"></script>
 <script src="js/views/mapView.js"></script>
 <script src="js/views/checkinListView.js"></script>
@@ -148,18 +149,4 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
 <!-- end scripts -->
-
-
-
-<script>
-    $(function() {
-        $('#testMainView').on('click', function() {
-            var view = new Whisper.MainView({
-                el: $('#main-content')[0]
-            });
-            view.render();
-        });
-    });
-</script>
-<button id="testMainView">Test Main View</button>
 </body>
