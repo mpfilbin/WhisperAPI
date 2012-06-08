@@ -1,4 +1,4 @@
-Window.Whisper = Whisper || {};
+Window.Whisper = Window.Whisper || {};
 
 
 
