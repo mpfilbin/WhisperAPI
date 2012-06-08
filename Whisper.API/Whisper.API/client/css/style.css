@@ -245,11 +245,13 @@ td { vertical-align: top; }
   z-index:20;
 }
 
-
-
-
-
-
+.whisperlogobig{
+  background-image:url(../img/whisperlogobig.png);
+  background-repeat:no-repeat;
+  height:112px;
+  margin-top:45px;
+  width:324px;
+}
 
 
 
