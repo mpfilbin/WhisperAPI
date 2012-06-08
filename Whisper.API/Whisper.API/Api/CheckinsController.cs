@@ -29,12 +29,18 @@ namespace Whisper.API.Controllers
 
             foreach (var student in students)
             {
-          
-                 var userJson = PearsonApiUtilities.GetUserJson(decodedToken, student.StudentId);
-                var users = new JavaScriptSerializer().Deserialize<Users>(userJson);
+                try
+                {
+                    var userJson = PearsonApiUtilities.GetUserJson(decodedToken, student.StudentId);
+                    var users = new JavaScriptSerializer().Deserialize<Users>(userJson);
 
-                student.FirstName = users.users[0].firstName;
-                student.LastName = users.users[0].lastName;
+                    student.FirstName = users.users[0].firstName;
+                    student.LastName = users.users[0].lastName;
+                }
+                catch (Exception)
+                {
+                    //skip it... HACK
+                }
             }
 
             var result = Mapper.Map<List<Student>, IEnumerable<StudentPoco>>(students);

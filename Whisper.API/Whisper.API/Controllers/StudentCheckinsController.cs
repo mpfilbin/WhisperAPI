@@ -77,13 +77,11 @@ namespace Whisper.API.Controllers
         [HttpPost]
         public ActionResult Edit(Student student)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(student).State = EntityState.Modified;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            return View(student);
+
+
         }
 
         //
