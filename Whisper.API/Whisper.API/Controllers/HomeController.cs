@@ -52,6 +52,8 @@ namespace Whisper.API.Controllers
             ViewBag.OAuthResult = accessToken;
             ViewBag.MeCoursesResult = PearsonApiUtilities.XAuthApiCall(accessToken, "http://m-api.ecollege.com/me/courses");
             ViewBag.CourseDetails = PearsonApiUtilities.XAuthApiCall(accessToken, "https://m-api.ecollege.com/courses/3312999");
+            ViewBag.Students = PearsonApiUtilities.XAuthApiCall(accessToken, "https://m-api.ecollege.com/courses/3312999/students");
+            ViewBag.User = PearsonApiUtilities.XAuthApiCall(accessToken, "https://m-api.ecollege.com/users/4433390");
 
             return View();
         }

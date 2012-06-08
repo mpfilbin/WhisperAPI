@@ -4,19 +4,23 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using Whisper.API.Models;
+using Whisper.API.Utilities;
 
 namespace Whisper.API.Controllers
 {
     public class SigninController : ApiController
     {
         // POST /api/signin
-        public StudentPoco Post(string username, string password)
+        public string Post(string username, string password)
         {
-            var result = StudentUtilities.GetStudentPoco("User0001");
+            var test = Request.Content.Headers.ToString();
+            var token = PearsonApiUtilities.GetOauthAccessToken(username, password);
 
-            result.UserName = username; //for testing purposes only...
+            //var result = StudentUtilities.GetStudentPoco("User0001");
 
-            return result;
+            //result.UserName = username; //for testing purposes only...
+
+            return token;
         }
 
     }
