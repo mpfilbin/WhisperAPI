@@ -51,6 +51,9 @@
     </div>
   </script>
     <script type="text/template" id="main-template">
+        <div class="whisperlogosmall">Whisperlogosmall</div>
+
+
         <div id="menu-bar">
             <ul id="tool-links">
                 <li id="checkin-link"><a href="#">Check In</a></li>
@@ -89,6 +92,18 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
     <script src="js/libs/modernizr-2.5.3.min.js"></script>
 
     <script type="text/template" id="signin-template">
+        
+        <!-- a map showing recent checkins for the selected course -->
+        <div id="map-canvas"></div>
+
+        <div id="course-picker">
+            <select>
+            <% courses.each(function(course) { %>
+                <option value="<%= course.get('id') %>"><%= course.get('title') %></option>
+            <% }); %>
+            </select>
+        </div>
+
         <div id="menu-bar">
             <ul id="tool-links">
                 <li id="checkin-link"><a href="#">Check In</a></li>
@@ -96,8 +111,7 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
                 <li id="show-map-link"><a href="#">Show Map</a></li>
             </ul>
         </div>
-        <!-- a map showing recent checkins for the selected course -->
-        <div id="map-canvas"></div>
+
         <!-- a list showing recent checkins for the course -->
         <div id="recent-checkins" style="display: none;">
             <ul>
@@ -112,13 +126,8 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
                 </li>
             </ul>
         </div>
-        <div id="course-picker">
-            <select>
-            <% courses.each(function(course) { %>
-                <option value="<%= course.get('id') %>"><%= course.get('title') %></option>
-            <% }); %>
-            </select>
-        </div>
+
+
     </script>
   </head>
 <body>
@@ -131,7 +140,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
   </header>
      <div class="maininterface">
      <div class="glare"></div>
-      <div id="main-content" role="main" style="border:ipx solid red;"></div>
+      <div id="main-content" role="main"></div>
       
     </div>
   <footer>

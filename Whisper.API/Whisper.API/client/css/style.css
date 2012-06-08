@@ -254,6 +254,15 @@ td { vertical-align: top; }
   width:324px;
 }
 
+.whisperlogosmall {
+  background-image:url(../img/whisperlogosmall.png);
+  background-repeat:no-repeat;
+  height:36px;
+  margin-top:90px;
+  margin-bottom:20px;
+  width:96px;
+}
+
 input[type="text"], input[type="password"] {
   -webkit-border-radius: 6px;
 -moz-border-radius: 6px;
@@ -292,6 +301,19 @@ a:link,a:visited,a:focus,a:hover,a:active {
   text-decoration:none;
 }
 
+#map-canvas{
+  height:238px;
+  width:317px;
+  top:-392px;
+}
+
+#course-picker {
+  margin-top:-391px;
+}
+
+#course-picker select {
+  width:317px;
+}
 
 
 
