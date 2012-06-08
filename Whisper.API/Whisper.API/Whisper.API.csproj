@@ -170,6 +170,9 @@
     <Content Include="client\css\style.css" />
     <Content Include="client\img\glare.png" />
     <Content Include="client\img\iphone.png" />
+    <Content Include="client\img\recentbutton.png" />
+    <Content Include="client\img\returntomapbutton.png" />
+    <Content Include="client\img\whisperbutton.png" />
     <Content Include="client\img\whisperlogobig.png" />
     <Content Include="client\img\whisperlogosmall.png" />
     <Content Include="client\index.html" />
