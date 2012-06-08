@@ -8,6 +8,9 @@ Whisper.MapView = Backbone.View.extend({
             });
         }
         return this;
+    },
+    clear: function() {
+        this.map.clear();
     }
 });
 
