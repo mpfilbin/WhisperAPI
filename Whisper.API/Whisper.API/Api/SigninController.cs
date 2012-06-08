@@ -28,7 +28,7 @@ namespace Whisper.API.Controllers
 
             var userID = tokenParts[2];
 
-            var userJson = PearsonApiUtilities.GetUser(token, userID);
+            var userJson = PearsonApiUtilities.GetUserJson(token, userID);
 
             var result = new SigninResult()
                              {
