@@ -81,7 +81,9 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
     <script type="text/template" id="main-template">
         <div id="menu-bar">
             <ul id="tool-links">
-                <li><a id="checkin-link" href="#">Check In</a></li>
+                <li id="checkin-link"><a href="#">Check In</a></li>
+                <li id="show-list-link"><a href="#">Show List</a></li>
+                <li id="show-map-link"><a href="#">Show Map</a></li>
             </ul>
         </div>
         <!-- a map showing recent checkins for the selected course -->
@@ -138,6 +140,7 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <script type="text/javascript" src="js/views/signinView.js"></script>
 <script src="js/views/mainView.js"></script>
 <script src="js/views/mapView.js"></script>
+<script src="js/views/checkinListView.js"></script>
 <script src="js/map.js"></script>
 
 <!-- scripts concatenated and minified via build script -->
