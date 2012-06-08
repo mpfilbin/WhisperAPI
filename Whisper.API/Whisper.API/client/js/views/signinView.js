@@ -60,8 +60,10 @@ Whisper.SigninView = Backbone.View.extend({
     if(results){
       Whisper.app.currentUser.accessToken = results.EncodedAuthToken;
       Whisper.app.currentUser.id = results.UserId;
-      Whisper.app.currentUser.student = new Whisper.Student(result.User);
-      this.remove();
+      results = jQuery.parseJSON(results.User);
+      Whisper.app.currentUser.student = new Whisper.Student(results.users[0]);
+      //this.remove();
+      Whisper.app.router.navigate('#/main', {trigger: true});
     }
   },
   signinFailure: function(failure){

@@ -28,10 +28,7 @@
   <link rel="stylesheet" href="css/custom.css" />
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="js/vendor/modernizr-2.5.3.min.js"></script>
   <script type="text/template" id="signin-template">
       <div id="login-form">
       <h2>Please Login</h2>
@@ -50,30 +47,7 @@
       </form>
     </div>
   </script>
-  </head>
-    <!-- All JavaScript at the bottom, except this Modernizr build.
-Modernizr enables HTML5 elements & feature detects for optimal performance.
-Create your own custom Modernizr build: www.modernizr.com/download/ -->
-    <script src="js/libs/modernizr-2.5.3.min.js"></script>
-    <script type="text/template" id="signin-template">
-        <div id="menu-bar">
-            <ul id="tool-links">
-                <li><a id="login-link" href="#">Sign In</a></li>
-            </ul>
-        </div>
-        <div id="login-form" style="display: none;">
-            <h2>Please Login</h2>
-
-            <form action="<%= signin_uri %>">
-                <label for="username">Username:</label>
-                <input type="text" name="username"/><br/>
-                <label for="password">Password:</label>
-                <input type="password" name="password"/><br/>
-                <input type="submit" name="submit" value="Login"/>
-            </form>
-        </div>
-    </script>
-    <script type="text/template" id="main-template">
+  <script type="text/template" id="main-template">
         <div id="menu-bar">
             <ul id="tool-links">
                 <li id="checkin-link"><a href="#">Check In</a></li>
@@ -99,35 +73,33 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
         </div>
         <div id="course-picker">
             <select>
-                <option>Course 1</option>
-                <option>Course 2</option>
-                <option>Course 3</option>
+            <% courses.each(function(course) { %>
+                <option value="<%= course.get('id') %>"><%= course.get('title') %></option>
+            <% }); %>
             </select>
         </div>
     </script>
-</head>
+  </head>
 <body>
 <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
 chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a
     different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
     to experience this site.</p><![endif]-->
-<header>
-
+  <header>
+    <h1>Welcome to Whisper</h1>
   </header>
-  <h1>Welcome to Whisper</h1>
   <div id="main-content" role="main">
   </div>
   <footer>
 
-</footer>
-
+  </footer>
 
 <!-- JavaScript at the bottom for fast page loading -->
 
 <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.1.min.js"><\/script>')</script>
 <script type="text/javascript" src="js/vendor/underscore.js"></script>
 <script type="text/javascript" src="js/vendor/backbone.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyApXY_LzzT8ze9rMkobNKntNvM_oXSIP4o&sensor=true"></script>

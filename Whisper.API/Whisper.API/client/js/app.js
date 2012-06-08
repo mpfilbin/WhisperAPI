@@ -2,6 +2,7 @@ var Whisper = Whisper || {};
 
 (function($, Whisper){
   Whisper.app = {
+    map: undefined,
     initialize: function() {
       _.extend(this, Backbone.Events);
       this.registerRoutes();
@@ -14,17 +15,16 @@ var Whisper = Whisper || {};
           "main": "renderMainView"
         },
         renderMainView: function(){
-          var courses = new Whisper.CourseCollection;
-              courses.fetch();
-
+          var courseCollection = new Whisper.CourseCollection();
           var mainView = new Whisper.MainView({
-            el: $('#main-content')[0],
-            model: {
-              courses: courses,
-              //selectedCourseId: courses.first().id
-            }
-          });
-          mainView.render();
+                el: $('#main-content')[0],
+                model: courseCollection
+                /*model: {
+                 courses: courses,
+                 //selectedCourseId: courses.first().id
+                 }*/
+            });
+            mainView.render();
         },
         renderLogin: function(){
           var signin = new Whisper.SigninView({

@@ -9,14 +9,18 @@ Whisper.MainView = Backbone.View.extend({
       this.template = _.template($('#main-template').html());
     },
     render: function() {
-        var model = {};
-        var output = this.template(model);
-        this.$el.html(output);
-        if (this.selectedSubView === 'map') {
-            this.showMap();
-        } else {
-            this.showList();
-        }
+      var model, output, self = this;
+        this.model.fetch({
+            success: function(results, response){
+                output = self.template({courses:results});
+                self.$el.html(output);
+                if (self.selectedSubView === 'map') {
+                    self.showMap();
+                } else {
+                    self.showList();
+                }
+            }
+        });
         return this;
     },
     checkin: function() {
