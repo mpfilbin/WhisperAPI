@@ -9,21 +9,4 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 
-// because some of the devs run Windows and some run Linux, and because this project is part ASP.NET MVC 4
-// and part rich client-side app, we serve the javascript locally and always connect to the deployed
-// version for the API service calls. The result is an AJAX *cross-domain* call.
-// Ramifications include the need to have a cross domain policy file in the root and fully qualified URLs
-// to be called by backbone (instead of relative URLs). Here, we override the url function to be able to call
-// fully qualified URLs.
 
-// see original url() function in Backbone annotated source http://backbonejs.org/docs/backbone.html
-Backbone.Model.prototype.url = function() {
-    var domain = 'http://whisper.apphb.com';
-    var base = getValue(this, 'urlRoot') || getValue(this.collection, 'url') || urlError();
-    var url = domain + (base.charAt(0) == '/' ? '' : '/') + base;
-
-    console.log('attempting to load Model data from: ', url);
-
-    if (this.isNew()) return url;
-    return url + (base.charAt(base.length - 1) == '/' ? '' : '/') + encodeURIComponent(this.id);
-}
