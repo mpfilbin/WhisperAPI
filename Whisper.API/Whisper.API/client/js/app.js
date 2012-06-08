@@ -1,11 +1,20 @@
 var Whisper = Whisper || {};
 
 (function($, Whisper){
-  $(function(){
-    var signin = new Whisper.SigninView({
-      el: $("div#main-content").first()
-    });
-    signin.render();
+  Whisper.app = {
+    initialize: function() {
+        var signin = new Whisper.SigninView({
+        el: $("div#main-content").first()
+        });
+      signin.render();
+    },
+  currentUser: {
+        accessToken:undefined,
+        object:undefined
+      }
+  };
+$(function(){
+    Whisper.app.initialize();
   });
 })(jQuery, Whisper);
 

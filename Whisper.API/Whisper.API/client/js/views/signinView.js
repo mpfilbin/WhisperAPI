@@ -2,7 +2,8 @@ Whisper.SigninView = Backbone.View.extend({
   loginForm: undefined,
   events: {
     "submit #login-form form" : "submitLoginForm",
-    "click a#login-link" : "showForm"
+    "click a#login-link" : "showForm",
+    "click button#cancel" : "hideForm",
   },
   initialize: function(){
     _.extend(this, Backbone.Events);
@@ -13,11 +14,26 @@ Whisper.SigninView = Backbone.View.extend({
       signin_uri: "http://whisper.apphb.com/api/signin"
     });
     $(this.el).html(output);
+    this.loginForm = $("#login-form");
     return this;
   },
   showForm: function(event){
     event.preventDefault();
-    $("#login-form").show();
+    if(!this.isFormVisible()){
+      this.isFormVisible(true);
+    }
+  },
+  hideForm: function(event){
+    if(this.isFormVisible()){
+      this.isFormVisible(false);
+    }
+  },
+  isFormVisible: function(isFormVisible){
+    if(typeof isFormVisible === "undefined"){
+      return !this.loginForm.hasClass("hidden");
+    } else {
+      this.loginForm[isFormVisible ? "removeClass" : "addClass"]("hidden");
+    }
   },
   submitLoginForm: function(event){
     var data, self = this;
