@@ -52,8 +52,16 @@
   </script>
     <script type="text/template" id="main-template">
         <div class="whisperlogosmall">Whisperlogosmall</div>
-
-
+        <!-- a map showing recent checkins for the selected course -->
+        <div id="map-canvas"></div>
+        <div id="course-picker">
+            <select>
+                <% courses.each(function(course) { %>
+                <option value="<%= course.get('id') %>"><%= course.get('title') %></option>
+                <% }); %>
+            </select>
+        </div>
+        <!-- a list showing recent checkins for the course -->
         <div id="menu-bar">
             <ul id="tool-links">
                 <li id="checkin-link"><a href="#">Check In</a></li>
@@ -61,9 +69,7 @@
                 <li id="show-map-link"><a href="#">Show Map</a></li>
             </ul>
         </div>
-        <!-- a map showing recent checkins for the selected course -->
-        <div id="map-canvas"></div>
-        <!-- a list showing recent checkins for the course -->
+
         <div id="recent-checkins" style="display: none;">
             <ul>
                 <li>
@@ -76,13 +82,6 @@
                     Walter Cronkite checked in 3 days ago, 2 feet away from you
                 </li>
             </ul>
-        </div>
-        <div id="course-picker">
-            <select>
-                <% courses.each(function(course) { %>
-                <option value="<%= course.get('id') %>"><%= course.get('title') %></option>
-                <% }); %>
-            </select>
         </div>
     </script>
   </head>
