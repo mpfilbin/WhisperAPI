@@ -21,7 +21,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
   <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/custom.css" />
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
@@ -29,13 +29,19 @@
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
   <script type="text/template" id="signin-template">
-    <div id="menu-bar">
-      <ul id="tool-links">
-        <li><a id="login-link" href="#">Sign In</a></li>
-      </ul>
+    <div>
+      <p>
+        In order to use this application, you must first <span> <a href="#" id="login-link">sign in</a></span>
+      </p>
     </div>
     <div id="login-form" style="display: none;">
       <h2>Please Login</h2>
+      <div id="login-error-message" class="hidden">
+        <p>
+          Sorry, there was a problem logging you in. Please check either your username or password and
+          try again.
+        </p>
+      </div>
       <form action="<%= signin_uri %>" >
         <label for="username">Username:</label>
         <input type="text" name="username" /><br />
@@ -53,6 +59,7 @@
   <header>
 
   </header>
+  <h1>Welcome to Whisper</h1>
   <div id="main-content" role="main">
   </div>
   <footer>
