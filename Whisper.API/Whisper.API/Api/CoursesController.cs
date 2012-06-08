@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using System.Web.Script.Serialization;
 using Whisper.API.Utilities;
@@ -13,6 +14,8 @@ namespace Whisper.API.Controllers
 
         public List<StudentCourses.Course> Student(string token, string id)
         {
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+
             var decodedToken = PearsonApiUtilities.DecodeFrom64(token);
 
             var meCoursesJson = PearsonApiUtilities.XAuthApiCall(decodedToken, "http://m-api.ecollege.com/me/courses");
