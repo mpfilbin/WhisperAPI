@@ -141,7 +141,7 @@
   <ItemGroup>
     <Compile Include="ActionImage.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Api\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Api\LocationController.cs" />
     <Compile Include="Api\SigninController.cs" />

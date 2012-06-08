@@ -32,7 +32,13 @@ namespace Whisper.API
             routes.MapHttpRoute(
                  name: "GetStudent",
                  routeTemplate: "api/students/{token}/{id}",
-                 defaults: new { controller = "Students",action = "GetStudent", token = UrlParameter.Optional, id = UrlParameter.Optional }
+                 defaults: new { controller = "Students", action = "GetStudent", token = UrlParameter.Optional, id = UrlParameter.Optional }
+             );
+
+            routes.MapHttpRoute(
+                 name: "GetStudentCourses",
+                 routeTemplate: "api/courses/students/{token}/{id}",
+                 defaults: new { controller = "Courses", action = "Student", token = UrlParameter.Optional, id = UrlParameter.Optional }
              );
 
             routes.MapHttpRoute(
