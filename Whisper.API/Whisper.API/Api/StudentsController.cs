@@ -18,15 +18,13 @@ namespace Whisper.API.Controllers
             HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
 
             var decodedToken = PearsonApiUtilities.DecodeFrom64(token);
-            return PearsonApiUtilities.GetUser(decodedToken, id);
+            return PearsonApiUtilities.GetUserJson(decodedToken, id);
         }
 
-        // POST /api/students
-        //public string Post(string token, string id)
+
+        //public string List(string token, string id)
         //{
-        //    return PearsonApiUtilities.GetUser(token, id);
+        //    return "foobar";
         //}
-
-
     }
 }

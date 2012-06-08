@@ -96,7 +96,7 @@ namespace Whisper.API.Utilities
 
         }
 
-        public static string GetUser(string token, string userID)
+        public static string GetUserJson(string token, string userID)
         {
             var url = String.Format("https://m-api.ecollege.com/users/{0}", userID);
 

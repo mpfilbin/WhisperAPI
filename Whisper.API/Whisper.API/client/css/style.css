@@ -220,17 +220,77 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author:
+   Author: Aspenware...for the Pearson Hackathon!
    ========================================================================== */
 
+.maininterface{
+  background-image:url(../img/iphone.png);
+  background-repeat:no-repeat;
+  color:white;
+  height:1000px;
+  padding-left:32px;
+  padding-top:118px;
+  width:348px;
+  margin:auto;
+  margin-top:20px;}
 
+.glare{
+  background-image:url(../img/glare.png);
+  background-repeat:no-repeat;
+  height:414px;
+  float:right;
+  margin-top:11px;
+  margin-right:31px;
+  width:131px;
+  z-index:20;
+}
 
+.whisperlogobig{
+  background-image:url(../img/whisperlogobig.png);
+  background-repeat:no-repeat;
+  height:112px;
+  margin-top:90px;
+  margin-bottom:20px;
+  width:324px;
+}
 
+input[type="text"], input[type="password"] {
+  -webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+margin-bottom:10px;
+margin-top:10px;
+}
 
+input[type="submit"],input[type="button"]{
+  margin-top:10px;
+  font-size:1.6em;
+  text-shadow: 1px 1px #fff;
+}
 
+input[type="button"]{
+  background-color:#ffb400;
+    -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border:1px solid gray;
+}
 
+label{
+ display:none;
+}
 
+#loginform{
+  text-align:right;
+  margin-right:26px;
+  position:absolute;
+  margin-left:116px;
+}
 
+a:link,a:visited,a:focus,a:hover,a:active {
+  color:#ffb400;
+  text-decoration:none;
+}
 
 
 
