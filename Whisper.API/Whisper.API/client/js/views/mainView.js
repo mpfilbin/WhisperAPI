@@ -4,7 +4,7 @@ Whisper.MainView = Backbone.View.extend({
         'click #checkin-link a': 'checkin',
         'click #show-list-link a' : 'showList',
         'click #show-map-link a' : 'showMap',
-        'onmouseup #course-picker select': 'onSelectChange',
+        'mouseup #course-picker select': 'onSelectChange',
         'click button#check-in': "checkin"
     },
     initialize: function() {
@@ -80,11 +80,11 @@ Whisper.MainView = Backbone.View.extend({
         }
         this.mapView.render();
         this.mapView.clear();
-        if(checkins){
-           this.mapView.map.placeMarker(checkins);
-        }
         this.mapView.$el.show();
         this.selectedSubView = 'map';
+        if(typeof checkins !== 'undefined'){
+            this.mapView.map.placeMarker(checkins);
+        }
     },
     showList: function(checkins) {
         this.$el.find('#show-list-link').hide();
