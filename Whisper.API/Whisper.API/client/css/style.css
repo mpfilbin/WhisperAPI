@@ -226,8 +226,11 @@ td { vertical-align: top; }
 .maininterface{
   background-image:url(../img/iphone.png);
   background-repeat:no-repeat;
+  color:white;
   height:1000px;
-  width:380px;
+  padding-left:32px;
+  padding-top:118px;
+  width:348px;
   margin:auto;
   margin-top:20px;}
 
@@ -235,9 +238,9 @@ td { vertical-align: top; }
   background-image:url(../img/glare.png);
   background-repeat:no-repeat;
   height:414px;
-  position:relative;
-  top:129px;
-  left:218px;
+  float:right;
+  margin-top:11px;
+  margin-right:31px;
   width:131px;
   z-index:20;
 }
