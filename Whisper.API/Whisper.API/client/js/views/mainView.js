@@ -4,7 +4,8 @@ Whisper.MainView = Backbone.View.extend({
         'click #checkin-link a': 'checkin',
         'click #show-list-link a' : 'showList',
         'click #show-map-link a' : 'showMap',
-        'change #course-picker select': 'onSelectChange'
+        'onmouseup #course-picker select': 'onSelectChange',
+        'click button#check-in': "checkin"
     },
     initialize: function() {
       this.template = _.template($('#main-template').html());
@@ -24,21 +25,48 @@ Whisper.MainView = Backbone.View.extend({
         });
         return this;
     },
-    checkin: function() {
-        alert('checkin in');
+    checkin: function(event) {
+        var currentCourseId, checkin, lat, lon, self = this;
+        event.preventDefault();
+        currentCourseId = this.getSelectedCourseId();
+        checkin = new Whisper.Checkin;
+        navigator.geolocation.getCurrentPosition(function(position){
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            checkin.setCheckinData(currentCourseId, lat, lon);
+            checkin.fetch({
+                success:function(result, response){
+                    console.log(result);
+                }
+            })
+
+        });
+    },
+
+    getSelectedCourseId:function(event){
+        var selectElement;
+        if(typeof event !== "undefined"){
+            selectElement = $(event.target);
+        }else{
+            selectElement = $("#course-picker select");
+        }
+        return ("option:selected", selectElement).val();
+
     },
     onSelectChange: function(event){
-        var selectElement, selectedOption, courseId, deferred, self = this;
+        var selectedCouseId, checkinsCollection, self = this;
         event.preventDefault();
-        selectElement = $(event.target);
-        selectedOption = $("option:selected", selectElement);
-        courseId = selectedOption.val()
-        var checkinsCollection = new Whisper.CheckinsCollection();
-        checkinsCollection.setUrl(courseId);
+        selectedCouseId = this.getSelectedCourseId(event)
+        checkinsCollection = new Whisper.CheckinsCollection();
+        checkinsCollection.setUrl(selectedCouseId);
         checkinsCollection.fetch({
-            success:function(results){
-                self.showMap(results)
-            }});
+            success:function(results, response){
+                self.showMap(results.toJSON());
+            },
+            error: function(results, response){
+                console.log(response);
+            }
+        });
     },
     showMap: function(checkins) {
         this.$el.find('#show-map-link').hide();
@@ -52,6 +80,9 @@ Whisper.MainView = Backbone.View.extend({
         }
         this.mapView.render();
         this.mapView.clear();
+        if(checkins){
+           this.mapView.map.placeMarker(checkins);
+        }
         this.mapView.$el.show();
         this.selectedSubView = 'map';
     },

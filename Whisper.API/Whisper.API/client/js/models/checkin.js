@@ -1,11 +1,15 @@
 Whisper.Checkin = Backbone.Model.extend({
-  initialize: function(){
-  }
+   url:  "http://whisper.apphb.com/api/location/checkin/",
+    initialize: function(){
+        this.url = this.url + Whisper.app.currentUser.id;
+    },
+    setCheckinData:function(courseId, lat, lon){
+        this.url = this.url + "/" + courseId + "/" + lat + "/" + lon;
+    }
 });
 
 Whisper.CheckinsCollection = Backbone.Collection.extend({
     model: Whisper.Checkin,
-    couseId: undefined,
     initialize: function(){
     },
     setUrl:function(courseId){

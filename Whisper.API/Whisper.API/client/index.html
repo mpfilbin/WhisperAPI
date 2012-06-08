@@ -84,50 +84,7 @@
             </ul>
         </div>
     </script>
-  </head>
-    <!-- All JavaScript at the bottom, except this Modernizr build.
-Modernizr enables HTML5 elements & feature detects for optimal performance.
-Create your own custom Modernizr build: www.modernizr.com/download/ -->
-    <script src="js/libs/modernizr-2.5.3.min.js"></script>
-
-    <script type="text/template" id="signin-template">
-        
-        <!-- a map showing recent checkins for the selected course -->
-        <div id="map-canvas"></div>
-
-        <div id="course-picker">
-            <select>
-            <% courses.each(function(course) { %>
-                <option value="<%= course.get('id') %>"><%= course.get('title') %></option>
-            <% }); %>
-            </select>
-        </div>
-
-        <div id="menu-bar">
-            <ul id="tool-links">
-                <li id="checkin-link"><a href="#">Check In</a></li>
-                <li id="show-list-link"><a href="#">Show List</a></li>
-                <li id="show-map-link"><a href="#">Show Map</a></li>
-            </ul>
-        </div>
-
-        <!-- a list showing recent checkins for the course -->
-        <div id="recent-checkins" style="display: none;">
-            <ul>
-                <li>
-                    Student One, Jr. checked in 2 minutes ago, 30 feet away from you
-                </li>
-                <li>
-                    Yo Mamma, Esquire checked in 7 minutes ago, 200 feet away from you
-                </li>
-                <li>
-                    Walter Cronkite checked in 3 days ago, 2 feet away from you
-                </li>
-            </ul>
-        </div>
-
-
-    </script>
+    <script src="js/vendor/modernizr-2.5.3.min.js"></script>
   </head>
 <body>
 <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
