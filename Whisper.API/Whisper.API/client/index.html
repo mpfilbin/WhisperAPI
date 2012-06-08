@@ -33,12 +33,7 @@
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
   <script type="text/template" id="signin-template">
-    <div>
-      <p>
-        In order to use this application, you must first <span> <a href="#" id="login-link">sign in</a></span>
-      </p>
-    </div>
-    <div id="login-form" class="hidden">
+      <div id="login-form">
       <h2>Please Login</h2>
       <div id="login-error-message" class="hidden">
         <p>
@@ -52,7 +47,6 @@
         <label for="password">Password:</label>
         <input type="password" name="password" /><br />
         <input type="submit" name="submit" value="Login" />
-        <button id="cancel">Cancel</button>
       </form>
     </div>
   </script>
@@ -151,24 +145,4 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
 <!-- end scripts -->
-
-
-
-<script>
-    $(function() {
-        $('#testMainView').on('click', function() {
-            var courses = new Whisper.CourseCollection;
-            courses.fetch();
-            var view = new Whisper.MainView({
-                el: $('#main-content')[0],
-                model: {
-                    courses: courses,
-                    //selectedCourseId: courses.first().id
-                }
-            });
-            view.render();
-        });
-    });
-</script>
-<button id="testMainView">Test Main View</button>
 </body>

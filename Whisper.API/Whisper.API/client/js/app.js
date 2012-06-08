@@ -14,8 +14,15 @@ var Whisper = Whisper || {};
           "main": "renderMainView"
         },
         renderMainView: function(){
+          var courses = new Whisper.CourseCollection;
+              courses.fetch();
+
           var mainView = new Whisper.MainView({
-            el: $('#main-content')[0]
+            el: $('#main-content')[0],
+            model: {
+              courses: courses,
+              //selectedCourseId: courses.first().id
+            }
           });
           mainView.render();
         },
@@ -39,4 +46,3 @@ $(function(){
     Whisper.app.initialize();
   });
 })(jQuery, Whisper);
-
