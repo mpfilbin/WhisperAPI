@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using Whisper.API.Models;
@@ -27,6 +28,7 @@ namespace Whisper.API.Controllers
             //var result = StudentUtilities.GetStudentPoco("User0001");
 
             //result.UserName = username; //for testing purposes only...
+           HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
 
             return userJson;
         }
