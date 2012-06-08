@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using AutoMapper;
 using ScrappyDB;
@@ -19,14 +20,16 @@ namespace Whisper.API.Controllers
     {
 
         [AcceptVerbs("GET", "POST")]
-        public IEnumerable<StudentPoco> Checkin(string studentId, string courseId, double lat, double lon)
+        public IEnumerable<StudentPoco> Checkin( string studentId, string courseId, double lat, double lon)
         {
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+
             return UpdateStudent(studentId, courseId, lat, lon);
         }
 
 
 
-        private static IEnumerable<StudentPoco> UpdateStudent(string studentId, string courseId, double lat, double lon)
+        private static IEnumerable<StudentPoco> UpdateStudent( string studentId, string courseId, double lat, double lon)
         {
             Mapper.CreateMap<Student, StudentPoco>();
 

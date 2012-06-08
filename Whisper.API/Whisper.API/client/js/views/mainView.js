@@ -22,7 +22,7 @@ Whisper.MainView = Backbone.View.extend({
     checkin: function() {
         alert('checkin in');
     },
-    showMap: function() {
+    showMap: function(checkins) {
         this.$el.find('#show-map-link').hide();
         this.$el.find('#show-list-link').show();
         if (this.listView) this.listView.$el.hide();
@@ -33,10 +33,11 @@ Whisper.MainView = Backbone.View.extend({
             });
         }
         this.mapView.render();
+        this.mapView.clear();
         this.mapView.$el.show();
         this.selectedSubView = 'map';
     },
-    showList: function() {
+    showList: function(checkins) {
         this.$el.find('#show-list-link').hide();
         this.$el.find('#show-map-link').show();
         if (this.mapView) this.mapView.$el.hide();

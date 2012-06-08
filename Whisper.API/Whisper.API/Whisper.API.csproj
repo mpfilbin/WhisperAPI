@@ -142,6 +142,7 @@
     <Compile Include="ActionImage.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Api\CoursesController.cs" />
+    <Compile Include="Api\CheckinsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Api\LocationController.cs" />
     <Compile Include="Api\SigninController.cs" />
@@ -272,24 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="client\app\assets\images\" />
-    <Folder Include="client\app\chaplin\controllers\" />
-    <Folder Include="client\app\chaplin\lib\" />
-    <Folder Include="client\app\chaplin\models\" />
-    <Folder Include="client\app\chaplin\views\" />
-    <Folder Include="client\app\controllers\" />
-    <Folder Include="client\app\lib\services\" />
-    <Folder Include="client\app\models\" />
-    <Folder Include="client\app\views\styles\" />
-    <Folder Include="client\app\views\templates\" />
-    <Folder Include="client\public\javascripts\" />
-    <Folder Include="client\public\stylesheets\" />
-    <Folder Include="client\test\controllers\" />
-    <Folder Include="client\test\lib\" />
-    <Folder Include="client\test\models\" />
-    <Folder Include="client\test\views\" />
-    <Folder Include="client\vendor\scripts\" />
-    <Folder Include="client\vendor\styles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
