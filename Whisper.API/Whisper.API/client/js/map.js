@@ -37,7 +37,7 @@ Whisper.Map = (function () {
             map = new google.maps.Map($('#' + options.id).get(0), mapOptions);
 
             placeMarker(location);
-            options.allback();
+            options.callback();
         }, function error(msg) {
             alert('error getting location. Message was: ' + msg);
         });

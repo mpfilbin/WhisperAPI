@@ -8,3 +8,14 @@ var Whisper = Whisper || {};
     signin.render();
   });
 })(jQuery, Whisper);
+
+// map example
+//$(function() {
+//    var map = new Whisper.Map({
+//        id:'map_canvas',
+//        zoomLevel:18,
+//        callback:function () {
+//
+//        }
+//    });
+//});
