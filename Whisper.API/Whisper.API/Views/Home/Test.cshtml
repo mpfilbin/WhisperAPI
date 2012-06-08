@@ -6,16 +6,16 @@
     <form action="/api/signin" method="POST">
     <p>
         Username
-        <input type="text" id="username"  name="username" /></p>
+        <input type="text" id="username"  name="username" value="jhNXTstud01"/></p>
     <p>
         Password:
-        <input type="text" id="password" name="password" /></p>
+        <input type="text" id="password" name="password"  value="jhNXTstud01"/></p>
     <input type="submit" />
     </form>
 </fieldset>
 <br />
 <fieldset>
-    <legend>2 - /api/students/{id}</legend><a href="/api/students/User0001">
+    <legend>2 - /api/students/{token}/{id}</legend><a href="/api/students/@ViewBag.AccessToken/@ViewBag.UserId">
                                                Test Student API</a>
 </fieldset>
 <br />

@@ -35,12 +35,25 @@ namespace Whisper.API.Controllers
 
             return View();
         }
+
         public ActionResult Test()
         {
             ViewBag.Message = "Api test page.";
 
+            const string username = "jhNXTprof";
+            const string password = "jhNXTprof";
+
+            var accessToken = PearsonApiUtilities.GetOauthAccessToken(username, password);
+
+            string[] tokenParts = accessToken.Split('|');
+
+            ViewBag.UserId = tokenParts[2];
+
+            ViewBag.AccessToken = PearsonApiUtilities.EncodeTo64(accessToken);
+
             return View();
         }
+
 
         public ActionResult OAuthTest()
         {
