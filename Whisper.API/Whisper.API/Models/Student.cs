@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ScrappyDB.Attributes;
 
 namespace Whisper.API.Models
 {
+    [AutoCreateUpdateDates]
     public class Student : ScrappyDB.BaseClasses.SdbEntityWithLocation
     {
         public string StudentId { get; set; }
