@@ -16,7 +16,7 @@ namespace Whisper.API.Controllers
     {
         // POST /api/signin
         //[AllowCrossSiteJson]
-        public SigninResult Post(string username, string password)
+        public SigninResult Authenticate(string username, string password)
         {
             HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
 
