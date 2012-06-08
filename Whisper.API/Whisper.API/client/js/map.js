@@ -36,8 +36,8 @@ Whisper.Map = (function () {
             };
             map = new google.maps.Map($('#' + options.id).get(0), mapOptions);
 
-            placeMarker(location);
-            options.callback();
+            placeMarker(location, true);
+            if (options.callback) options.callback();
         }, function error(msg) {
             alert('error getting location. Message was: ' + msg);
         });
@@ -45,7 +45,7 @@ Whisper.Map = (function () {
     };
 
     // pass single { lat: 0.0, lng: 0.0 } or an array of these objects
-    var placeMarker = function (markerInfo) {
+    var placeMarker = function (markerInfo, neverClear) {
         // if the argument is an object, put it into an array
         if (!$.isArray(markerInfo)) {
             markerInfo = [ markerInfo ];
@@ -56,7 +56,7 @@ Whisper.Map = (function () {
                 map:map,
                 title:'test'
             });
-            markers.push(marker);
+            if (!neverClear) markers.push(marker);
         });
     };
     var clearMarkers = function () {
