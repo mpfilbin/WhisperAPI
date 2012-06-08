@@ -1,11 +1,10 @@
-Window.Whisper = Window.Whisper || {};
+var Whisper = Whisper || {};
 
-
-
-$(function(){
-
-  $("a#login-link").bind('click', function(event){
-    event.preventDefault();
-    $("div#login-form").show();
+(function($, Whisper){
+  $(function(){
+    var signin = new Whisper.SigninView({
+      el: $("div#main-content").first()
+    });
+    signin.render();
   });
-});
+})(jQuery, Whisper);
