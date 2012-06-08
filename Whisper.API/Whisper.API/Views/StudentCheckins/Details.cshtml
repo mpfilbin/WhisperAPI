@@ -1,0 +1,81 @@
+﻿@model Whisper.API.Models.Student
+@{
+    ViewBag.Title = "Details";
+}
+<h2>
+    Details</h2>
+<fieldset>
+    <legend>Student</legend>
+    <table style="border-style: none;">
+        <tr>
+            <td style="width: 200px" valign="top">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.StudentId)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.StudentId)
+                </div>
+                <br/>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.CourseIds)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.CourseIds)
+                </div>
+                <br/>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.FirstName)
+                </div>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.LastName)
+                </div>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.UserName)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.UserName)
+                </div>
+                <br/>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Latitude)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Latitude)
+                </div>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Longitude)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Longitude)
+                </div>
+                <br/>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.LastUpdated)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.LastUpdated)
+                </div>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.CreateDate)
+                </div>
+            </td>
+            <td>
+                <iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+         src="@("http://dev.virtualearth.net/embeddedMap/v1/ajax/road?zoomLevel=10&center=" + Model.Latitude + "_" + Model.Longitude + "&pushpins=" + Model.Latitude + "_" + Model.Longitude)"/>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

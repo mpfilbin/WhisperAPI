@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Whisper.API.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentId)
+        </th>
+                <th>
+            @Html.DisplayNameFor(model => model.CourseIds)
+        </th>
+                <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastUpdated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentId)
+        </td>        <td>
+            @Html.DisplayFor(modelItem => item.CourseIds)
+        </td>
+               <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastUpdated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentId })
+        </td>
+    </tr>
+}
+
+</table>

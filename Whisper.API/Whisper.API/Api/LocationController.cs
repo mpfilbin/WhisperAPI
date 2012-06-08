@@ -45,7 +45,8 @@ namespace Whisper.API.Controllers
                 student = new Student
                               {
                                   StudentId = studentId,
-                                  CourseIds = new List<string>() { courseId }
+                                  CourseIds = new List<string>() { courseId },
+                                  CreateDate = DateTime.Now
                               };
             }
 
