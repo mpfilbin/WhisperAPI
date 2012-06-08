@@ -77,11 +77,14 @@ Whisper.SigninView = Backbone.View.extend({
       return formData;
     }
   },
-  signinSuccessful: function(result){
-    if(result){
-      console.log(result);
+  signinSuccessful: function(results){
+    if(results){
+      Whisper.app.currentUser.accessToken = results.EncodedAuthToken;
+      Whisper.app.currentUser.id = results.UserId;
       this.remove();
-      this.trigger("loginSuccess", result);
+      var mainView = new Whisper.MainView;
+      mainView.render();
+      this.trigger("loginSuccess", "");
     }
   },
   signinFailure: function(failure){

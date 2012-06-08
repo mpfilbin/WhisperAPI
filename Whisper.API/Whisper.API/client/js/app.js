@@ -10,6 +10,7 @@ var Whisper = Whisper || {};
     },
   currentUser: {
         accessToken:undefined,
+        id:undefined,
         object:undefined
       }
   };
