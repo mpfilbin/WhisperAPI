@@ -60,6 +60,12 @@ namespace Whisper.API.Utilities
 
         public static string XAuthApiCall(string token, string url)
         {
+            if(HttpContext.Current.Cache != null)
+            {
+                if (HttpContext.Current.Cache[url] != null)
+                    return HttpContext.Current.Cache[url].ToString();
+            }
+
             // Build the X-Authorization request header
             string xauth = String.Format("X-Authorization: Access_Token access_token={0}", token);
 
@@ -74,6 +80,12 @@ namespace Whisper.API.Utilities
                     using (var reader = new StreamReader(response.GetResponseStream()))
                     {
                         string json = reader.ReadToEnd();
+
+                        if (HttpContext.Current.Cache != null)
+                        {
+                            HttpContext.Current.Cache[url] = json;
+                        }
+
                         return json;
                     }
                 }
