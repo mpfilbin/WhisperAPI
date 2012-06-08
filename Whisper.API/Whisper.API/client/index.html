@@ -24,10 +24,38 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css" />
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-    <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script type="text/template" id="signin-template">
+    <div>
+      <p>
+        In order to use this application, you must first <span> <a href="#" id="login-link">sign in</a></span>
+      </p>
+    </div>
+    <div id="login-form" style="display: none;">
+      <h2>Please Login</h2>
+      <div id="login-error-message" class="hidden">
+        <p>
+          Sorry, there was a problem logging you in. Please check either your username or password and
+          try again.
+        </p>
+      </div>
+      <form action="<%= signin_uri %>" >
+        <label for="username">Username:</label>
+        <input type="text" name="username" /><br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" /><br />
+        <input type="submit" name="submit" value="Login" />
+      </form>
+    </div>
+  </script>
+  </head>
     <!-- All JavaScript at the bottom, except this Modernizr build.
 Modernizr enables HTML5 elements & feature detects for optimal performance.
 Create your own custom Modernizr build: www.modernizr.com/download/ -->
@@ -91,10 +119,11 @@ chromium.org/developers/how-tos/chrome-frame-getting-started -->
     to experience this site.</p><![endif]-->
 <header>
 
-</header>
-<div id="main-content" role="main">
-</div>
-<footer>
+  </header>
+  <h1>Welcome to Whisper</h1>
+  <div id="main-content" role="main">
+  </div>
+  <footer>
 
 </footer>
 
