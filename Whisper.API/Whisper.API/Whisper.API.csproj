@@ -169,6 +169,7 @@
     <Content Include="client\js\libs\jquery-1.7.1.js" />
     <Content Include="client\js\libs\jquery-1.7.1.min.js" />
     <Content Include="client\js\libs\modernizr-2.5.3.min.js" />
+    <Content Include="client\js\map.js" />
     <Content Include="client\js\models\checkin.js" />
     <Content Include="client\js\models\course.js" />
     <Content Include="client\js\models\student.js" />
@@ -180,6 +181,9 @@
     <Content Include="client\js\vendor\jquery-1.7.2.min.js" />
     <Content Include="client\js\vendor\underscore-min.js" />
     <Content Include="client\js\vendor\underscore.js" />
+    <Content Include="client\js\views\coursesView.js" />
+    <Content Include="client\js\views\signinView.js" />
+    <Content Include="client\js\views\studentsView.js" />
     <Content Include="client\robots.txt" />
     <Content Include="Content\logo-aspenware.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
