@@ -168,11 +168,9 @@
     <Content Include="client\css\style.css" />
     <Content Include="client\img\glare.png" />
     <Content Include="client\img\iphone.png" />
+    <Content Include="client\img\whisperlogobig.png" />
     <Content Include="client\index.html" />
     <Content Include="client\js\app.js" />
-    <Content Include="client\js\libs\jquery-1.7.1.js" />
-    <Content Include="client\js\libs\jquery-1.7.1.min.js" />
-    <Content Include="client\js\libs\modernizr-2.5.3.min.js" />
     <Content Include="client\js\map.js" />
     <Content Include="client\js\models\checkin.js" />
     <Content Include="client\js\models\course.js" />
@@ -181,8 +179,11 @@
     <Content Include="client\js\script.js" />
     <Content Include="client\js\vendor\backbone-min.js" />
     <Content Include="client\js\vendor\backbone.js" />
+    <Content Include="client\js\vendor\jquery-1.7.1.js" />
+    <Content Include="client\js\vendor\jquery-1.7.1.min.js" />
     <Content Include="client\js\vendor\jquery-1.7.2.js" />
     <Content Include="client\js\vendor\jquery-1.7.2.min.js" />
+    <Content Include="client\js\vendor\modernizr-2.5.3.min.js" />
     <Content Include="client\js\vendor\underscore-min.js" />
     <Content Include="client\js\vendor\underscore.js" />
     <Content Include="client\js\views\checkinListView.js" />
