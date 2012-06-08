@@ -169,6 +169,7 @@
     <Content Include="client\img\glare.png" />
     <Content Include="client\img\iphone.png" />
     <Content Include="client\img\whisperlogobig.png" />
+    <Content Include="client\img\whisperlogosmall.png" />
     <Content Include="client\index.html" />
     <Content Include="client\js\app.js" />
     <Content Include="client\js\map.js" />
