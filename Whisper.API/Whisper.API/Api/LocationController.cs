@@ -19,14 +19,14 @@ namespace Whisper.API.Controllers
     {
 
         [AcceptVerbs("GET", "POST")]
-        public IEnumerable<StudentPoco> Checkin(string studentId, string courseId, double lat, double lon)
+        public IEnumerable<StudentPoco> Checkin( string studentId, string courseId, double lat, double lon)
         {
             return UpdateStudent(studentId, courseId, lat, lon);
         }
 
 
 
-        private static IEnumerable<StudentPoco> UpdateStudent(string studentId, string courseId, double lat, double lon)
+        private static IEnumerable<StudentPoco> UpdateStudent( string studentId, string courseId, double lat, double lon)
         {
             Mapper.CreateMap<Student, StudentPoco>();
 
