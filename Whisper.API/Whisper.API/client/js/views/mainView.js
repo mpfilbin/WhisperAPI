@@ -3,7 +3,8 @@ Whisper.MainView = Backbone.View.extend({
     events: {
         'click #checkin-link a': 'checkin',
         'click #show-list-link a' : 'showList',
-        'click #show-map-link a' : 'showMap'
+        'click #show-map-link a' : 'showMap',
+        'change #course-picker select': 'onSelectChange'
     },
     initialize: function() {
       this.template = _.template($('#main-template').html());
@@ -25,6 +26,19 @@ Whisper.MainView = Backbone.View.extend({
     },
     checkin: function() {
         alert('checkin in');
+    },
+    onSelectChange: function(event){
+        var selectElement, selectedOption, courseId, deferred, self = this;
+        event.preventDefault();
+        selectElement = $(event.target);
+        selectedOption = $("option:selected", selectElement);
+        courseId = selectedOption.val()
+        var checkinsCollection = new Whisper.CheckinsCollection();
+        checkinsCollection.setUrl(courseId);
+        checkinsCollection.fetch({
+            success:function(results){
+                self.showMap(results)
+            }});
     },
     showMap: function(checkins) {
         this.$el.find('#show-map-link').hide();
