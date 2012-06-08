@@ -265,6 +265,7 @@ margin-top:10px;
 input[type="submit"],input[type="button"]{
   margin-top:10px;
   font-size:1.6em;
+  text-shadow: 1px 1px #fff;
 }
 
 input[type="button"]{
@@ -273,7 +274,6 @@ input[type="button"]{
 -moz-border-radius: 3px;
 border-radius: 3px;
 border:1px solid gray;
-
 }
 
 label{
