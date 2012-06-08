@@ -220,11 +220,27 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author:
+   Author: Aspenware...for the Pearson Hackathon!
    ========================================================================== */
 
+.maininterface{
+  background-image:url(../img/iphone.png);
+  background-repeat:no-repeat;
+  height:1000px;
+  width:380px;
+  margin:auto;
+  margin-top:20px;}
 
-
+.glare{
+  background-image:url(../img/glare.png);
+  background-repeat:no-repeat;
+  height:414px;
+  position:relative;
+  top:129px;
+  left:218px;
+  width:131px;
+  z-index:20;
+}
 
 
 
