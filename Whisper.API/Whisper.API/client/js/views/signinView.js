@@ -24,7 +24,7 @@ Whisper.SigninView = Backbone.View.extend({
     formData = $("#login-form form").serializeArray();
     $.ajax({
       url: "http://whisper.apphb.com/api/signin",
-      method: "POST",
+      type: "POST",
       context: self,
       cache: false,
       dataType: 'json',
