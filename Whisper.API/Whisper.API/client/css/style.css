@@ -47,8 +47,8 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
  * Also: hot pink! (or customize the background color to match your design)
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #ffb400; color: #fff; text-shadow: none; }
+::selection { background: #ffb400; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
@@ -238,11 +238,11 @@ td { vertical-align: top; }
   background-image:url(../img/glare.png);
   background-repeat:no-repeat;
   height:414px;
-  float:right;
+  position:absolute;
   margin-top:11px;
-  margin-right:31px;
+  margin-left:186px;
   width:131px;
-  z-index:20;
+  pointer-events:none;
 }
 
 .whisperlogobig{
@@ -258,8 +258,10 @@ td { vertical-align: top; }
   background-image:url(../img/whisperlogosmall.png);
   background-repeat:no-repeat;
   height:36px;
-  margin-top:90px;
+  margin-top:456px;
+  margin-left:112px;
   margin-bottom:20px;
+  position:absolute;
   width:96px;
 }
 
@@ -304,15 +306,80 @@ a:link,a:visited,a:focus,a:hover,a:active {
 #map-canvas{
   height:238px;
   width:317px;
-  top:-392px;
+  top:32px;
 }
 
 #course-picker {
-  margin-top:-391px;
+  margin-top:46px;
 }
 
 #course-picker select {
   width:317px;
+}
+
+#menu-bar{
+  z-index:20;
+}
+ul#tool-links{
+  list-style-type:none;
+  display:block;
+  margin-left:-30px;
+  width:300px;
+}
+ul#tool-links li#checkin-link {
+  background-image:url(../img/whisperbutton.png);
+  display:block;
+  cursor:pointer;
+  height:48px;
+  margin-bottom:10px;
+  text-align:center;
+  width:300px;
+  text-indent:-9999px;
+}
+
+ul#tool-links li#show-list-link {
+  background-image:url(../img/recentbutton.png);
+  display:block;
+  cursor:pointer;
+  height:48px;
+  margin-bottom:10px;
+  text-align:center;
+  width:300px;
+  text-indent:-9999px;
+}
+
+ul#tool-links li#show-map-link {
+  background-image:url(../img/returntomapbutton.png);
+  display:block;
+  cursor:pointer;
+  height:48px;
+  margin-bottom:10px;
+  text-align:center;
+  width:300px;
+  text-indent:-9999px;
+}
+
+ul#tool-links a:link,
+ul#tool-links a:visited,
+ul#tool-links a:focus,
+ul#tool-links a:hover,
+ul#tool-links a:active,
+ul#tool-links li {
+  display:block;
+  height:48px;
+  width:300px;}
+
+
+#recent-checkins{
+  height:260px;
+  width:316px;
+}
+
+#recent-checkins li{
+  list-style-type:none;
+  border-bottom:1px solid gray;
+  padding:6px 0 6px 0;
+  margin-left:-36px;
 }
 
 
