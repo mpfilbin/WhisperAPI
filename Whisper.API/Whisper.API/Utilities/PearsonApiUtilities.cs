@@ -58,7 +58,6 @@ namespace Whisper.API.Utilities
             return accessToken;
         }
 
-
         public static string XAuthApiCall(string token, string url)
         {
             // Build the X-Authorization request header
@@ -87,7 +86,7 @@ namespace Whisper.API.Utilities
                 {
                     using (HttpWebResponse err = (HttpWebResponse)e.Response)
                     {
-                        return string.Format("The server returned '{0}' with the status code '{1} ({2:d})'.",
+                        return String.Format("The server returned '{0}' with the status code '{1} ({2:d})'.",
                             err.StatusDescription, err.StatusCode, err.StatusCode);
                     }
                 }
@@ -95,6 +94,32 @@ namespace Whisper.API.Utilities
             }
 
 
+        }
+
+        public static string GetUser(string token, string userID)
+        {
+            var url = String.Format("https://m-api.ecollege.com/users/{0}", userID);
+
+            var userJson = XAuthApiCall(token, url);
+            return userJson;
+        }
+
+        static public string EncodeTo64(string toEncode)
+        {
+            byte[] toEncodeAsBytes
+                  = System.Text.ASCIIEncoding.ASCII.GetBytes(toEncode);
+            string returnValue
+                  = System.Convert.ToBase64String(toEncodeAsBytes);
+            return returnValue;
+        }
+
+        static public string DecodeFrom64(string encodedData)
+        {
+            byte[] encodedDataAsBytes
+                = System.Convert.FromBase64String(encodedData);
+            string returnValue =
+               System.Text.ASCIIEncoding.ASCII.GetString(encodedDataAsBytes);
+            return returnValue;
         }
     }
 }

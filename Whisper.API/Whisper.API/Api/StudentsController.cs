@@ -5,22 +5,24 @@ using System.Net.Http;
 using System.Web.Http;
 using AutoMapper;
 using Whisper.API.Models;
+using Whisper.API.Utilities;
 
 namespace Whisper.API.Controllers
 {
     public class StudentsController : ApiController
     {
         // GET /api/students/5
-        public StudentPoco Get(string id)
+        public string GetStudent(string token, string id)
         {
-            return StudentUtilities.GetStudentPoco(id);
+            var decodedToken = PearsonApiUtilities.DecodeFrom64(token);
+            return PearsonApiUtilities.GetUser(decodedToken, id);
         }
 
         // POST /api/students
-        public StudentPoco Post(string id)
-        {
-            return StudentUtilities.GetStudentPoco(id);
-        }
+        //public string Post(string token, string id)
+        //{
+        //    return PearsonApiUtilities.GetUser(token, id);
+        //}
 
 
     }
