@@ -17,7 +17,7 @@ Whisper.MainView = Backbone.View.extend({
                 output = self.template({courses:results});
                 self.$el.html(output);
                 if (self.selectedSubView === 'map') {
-                    self.showMap();
+                    self.loadInitialData();
                 } else {
                     self.showList();
                 }
