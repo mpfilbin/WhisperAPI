@@ -1,37 +1,37 @@
 # Whisper #
 
-Whisper is an HTML5 web application targeted at the mobile platform that leverages location awareness against a set of web services to allow users to create ad hoc study sessions through course-specific check-ins. The user's coordinates are plotted on a map along with other students who have checked in to a given course. Whenever a user changes courses, the map is dynamically updated with any check-ins from their classmates.
+Whisper is an HTML5 web application targeted at the mobile platform. It leverages location awareness against a set of web services to allow users to create ad hoc study sessions through course-specific check-ins. Whisper plots on a map the user's coordinates along with the coordinates of other students who have checked in to a given course. When a user changes courses, the map is dynamically updated with any check-ins from their classmates.
 
 ## Project Purpose ##
 
-Whisper was created as a prototype for the 2012 Pearson Hackathon and is not production-ready code. This application does not have a test suite and most of the application has no code coverage what-so-ever.
+Aspenware created Whisper as a prototype for the 2012 Pearson Hackathon. It is not production-ready code. This application has no test suite and most of the application has no code coverage.
 
 ## Techologies ##
 
-The following technolgies were used in the development of Whisper:
+We used the following technologies to develop Whisper:
 
 #### Client-side ####
 
 * [HTML5 geolocation API](http://dev.w3.org/geo/api/spec-source.html) for determining the latitude and longitude of check-ins
-* [Google Maps APIs](https://developers.google.com/maps/) for plotting a given user's positions on a map
+* [Google Maps APIs](https://developers.google.com/maps/) for plotting user positions on a map
 * [Cascading Styles Sheets level 3](http://www.w3.org/TR/CSS/) for layout, styling, and visual representation
-* [Backbone JavaScript Library](http://backbonejs.org/) for object representation, user-driven events, data-stores, and asynchronous service calls.
+* [Backbone JavaScript Library](http://backbonejs.org/) for object representation, user-driven events, data-stores, and asynchronous service calls
 * [jQuery JavaScript Library](http://jquery.com/) for basic DOM scripting
-* [Underscore.js JavaScript library](http://underscorejs.org/) for templating and utility methods.
+* [Underscore.js JavaScript library](http://underscorejs.org/) for templating and utility methods
 
 #### Server-side ####
 * [ASP.NET MVC version 3](http://www.asp.net/mvc) for development of the API tier
-* [Simple DB](http://aws.amazon.com/simpledb/) as out non-relational database for storage of user meta-data such as check-ins and geolocations
-* [App Harbor](https://appharbor.com/) for application server hosting and dynamic scalability.
+* [Simple DB](http://aws.amazon.com/simpledb/) as the non-relational database for storage of user meta-data such as check-ins and geolocations
+* [App Harbor](https://appharbor.com/) for application server hosting and dynamic scalability
 
 #### Development Tools ####
 * [Github](http://github.com) for source code management and versioning
 
 ## Architectural Overview ##
 
-The server-side implementation uses a traditional MVC design pattern where domain objects are represented by models and client interaction are handled through controller actions. The application APIs are exposed through RESTful routes and data are expressed through either JSON or XML depending upon how the service is consumed. The server-side APIs are client agnostic and may be consumed using native mobile applications and HTML5 RIAs alike.
+The server-side implementation uses a traditional MVC design pattern where models represent domain objects and controller actions handle client interaction. We expose application APIs through RESTful routes and we express data through either JSON or XML, depending upon how Whisper consumes the service. The server-side APIs are client agnostic and Whisper may consume them using both native mobile applications and HTML5 RIAs.
 
-The client-side implementation uses a model-collection-view paradigm where, like the server-side code, domain objects are represented by JavaScript models which are fetched and instantiated using asynchronous service calls. Data in the models are bound to a single view using HTML templates and new views are rendered by a router that intercepts changes in the browser's URL bar (hash) that are initiated by thinks like button or link clicks. This means that the front-end's state is captured by the browser's history and can be traversed using the forward and backward arrows.
+The client-side implementation uses a model-collection-view paradigm that, like the server-side code, represents domain objects by JavaScript models which Whisper fetches and instantiates using asynchronous service calls. We bound data in the models to a single view using HTML templates, and we rendered new views by a router that intercepts changes in the browser's URL bar via hashes, initiated by actions like button or link clicks. This means that the browser's history captures the front-end's state and this history can be traversed using the forward and backward arrows.
 
 ## Development Team ##
 
