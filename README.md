@@ -1,5 +1,7 @@
 # Whisper #
 
+** This is my personal fork of our Hackathon project. I am doing my own refactoring **
+
 Whisper is an HTML5 web application targeted at the mobile platform. It leverages location awareness against a set of web services to allow users to create ad hoc study sessions through course-specific check-ins. Whisper plots on a map the user's coordinates along with the coordinates of other students who have checked in to a given course. When a user changes courses, the map is dynamically updated with any check-ins from their classmates.
 
 ## Project Purpose ##
